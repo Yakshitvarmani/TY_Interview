@@ -20,7 +20,8 @@ const App = () => {
     let ascending = state.sort((a, b) => {
       return a.id - b.id;
     });
-    setAscending(ascending);
+    let aaa = [...ascending];
+    setAscending(aaa);
   };
 
   let handleDescending = e => {
@@ -28,11 +29,12 @@ const App = () => {
     let descending = state.sort((a, b) => {
       return b.id - a.id;
     });
-    setDescending(descending);
+    let bbb = [...descending];
+    setDescending(bbb);
   };
 
   const displayTitle = state
-    .filter((val, ind) => {
+    .filter(val => {
       if (setSearchTerm == "") {
         return val;
       } else if (val.title.toLowerCase().includes(searchTerm.toLowerCase())) {
